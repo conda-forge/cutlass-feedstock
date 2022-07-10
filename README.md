@@ -29,24 +29,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_c_compiler_version10cuda_compiler_version11.1cudnn8cxx_compiler_version10</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15506&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cutlass-feedstock?branchName=main&jobName=linux&configuration=linux_64_c_compiler_version10cuda_compiler_version11.1cudnn8cxx_compiler_version10" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_c_compiler_version10cuda_compiler_version11.2cudnn8cxx_compiler_version10</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15506&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cutlass-feedstock?branchName=main&jobName=linux&configuration=linux_64_c_compiler_version10cuda_compiler_version11.2cudnn8cxx_compiler_version10" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_c_compiler_version9cuda_compiler_version11.0cudnn8cxx_compiler_version9</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15506&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cutlass-feedstock?branchName=main&jobName=linux&configuration=linux_64_c_compiler_version9cuda_compiler_version11.0cudnn8cxx_compiler_version9" alt="variant">
                 </a>
               </td>
             </tr>
