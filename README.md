@@ -1,11 +1,11 @@
-About cutlass
-=============
+About cutlass-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cutlass-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/NVIDIA/cutlass
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cutlass-feedstock/blob/main/LICENSE.txt)
 
 Summary: CUDA Templates for Linear Algebra Subroutines
 
