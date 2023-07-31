@@ -1,4 +1,4 @@
-{% set version = "2.11.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: cutlass
@@ -6,14 +6,13 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cutlass/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b4394f1e080b63cfc54163069334096324c1262dfc66e67099880005d51b8af9
+  sha256: 821aa2e5b709a2e5d3922dcf2c5d445b4898a6ef8bac683cfb00125eafbca029
 
 build:
   number: 0
   skip: true  # [not linux]
-  # not supported for CUDA 10 nor CPU
-  # CUDA 11.{0|1} times out consistently
-  skip: true  # [cuda_compiler_version != "11.2"]
+  # cutlass 3.1 requires CUDA >=11.4
+  skip: true  # [not (cuda_compiler_version or "").startswith("12")]
   run_exports:
     - {{ pin_subpackage('cutlass', max_pin='x.x') }}
 
@@ -26,6 +25,7 @@ requirements:
     - make
   host:
     - cudnn
+    - libcublas-dev     # [(cuda_compiler_version or "").startswith("12")]
   run:
     - cudnn
 test:
