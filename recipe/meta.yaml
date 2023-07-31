@@ -11,9 +11,8 @@ source:
 build:
   number: 0
   skip: true  # [not linux]
-  # not supported for CUDA 10 nor CPU
-  # CUDA 11.{0|1} times out consistently
-  skip: true  # [cuda_compiler_version != "11.2"]
+  # cutlass 3.1 requires CUDA >=11.4
+  skip: true  # [not (cuda_compiler_version or "").startswith("12")]
   run_exports:
     - {{ pin_subpackage('cutlass', max_pin='x.x') }}
 
