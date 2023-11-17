@@ -9,7 +9,7 @@ source:
   sha256: 821aa2e5b709a2e5d3922dcf2c5d445b4898a6ef8bac683cfb00125eafbca029
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   # cutlass 3.1 requires CUDA >=11.4
   skip: true  # [not (cuda_compiler_version or "").startswith("12")]
