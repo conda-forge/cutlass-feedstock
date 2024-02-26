@@ -25,6 +25,7 @@ requirements:
   host:
     - cudnn
     - libcublas-dev     # [(cuda_compiler_version or "").startswith("12")]
+    - cuda-driver-dev     # [(cuda_compiler_version or "").startswith("12")] 
   run:
     - cudnn
 test:
