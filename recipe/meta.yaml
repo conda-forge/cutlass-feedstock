@@ -22,6 +22,7 @@ requirements:
     - {{ compiler('cuda') }}
     - cmake
     - make
+    - ninja  # [win64]
   host:
     - cudnn
     - libcublas-dev     # [(cuda_compiler_version or "").startswith("12")]
