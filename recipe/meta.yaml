@@ -28,6 +28,8 @@ requirements:
   run:
     - cudnn
 test:
+  requires:
+    - tree  # [linux]
   commands:
     # headers:
     - tree $CONDA_PREFIX/include/cutlass  # [linux]
