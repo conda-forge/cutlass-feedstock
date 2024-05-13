@@ -6,8 +6,8 @@ conda_build:
   pkg_format: '2'
 build_platform:
   linux_aarch64: linux_aarch64
-  linux_ppc64le: linux_ppc64le
+  linux_ppc64le: linux64
 provider:
   linux_aarch64: default
-  linux_ppc64le: default
+  linux_ppc64le: azure
 test: native
