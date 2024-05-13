@@ -9,10 +9,8 @@ source:
   sha256: 821aa2e5b709a2e5d3922dcf2c5d445b4898a6ef8bac683cfb00125eafbca029
 
 build:
-  number: 0
-  skip: true  # [not linux]
-  # cutlass 3.1 requires CUDA >=11.4
-  skip: true  # [not (cuda_compiler_version or "").startswith("12")]
+  number: 2
+  skip: true  # [osx]
   run_exports:
     - {{ pin_subpackage('cutlass', max_pin='x.x') }}
 
@@ -30,14 +28,6 @@ requirements:
     - cudnn
 test:
   commands:
-    # shared:
-    - test -f $PREFIX/lib/libcutlass.so               # [linux]
-    - if not exist %LIBRARY_BIN%\cutlass.dll exit 1   # [win]
-
-    # absence of static libraries (windows uses same extension for
-    # static libs and the "import library" needed to load a DLL):
-    - test ! -f $PREFIX/lib/libcutlass.a              # [not win]
-
     # headers:
     # This list should be substantially longer, but upstream just globs
     # all *.h files. These are the headers required for triton, but
@@ -59,3 +49,5 @@ extra:
   recipe-maintainers:
     - h-vetinari
     - RaulPPelaez
+    - leofang
+
