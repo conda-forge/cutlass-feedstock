@@ -23,5 +23,5 @@ cmake ^
 if errorlevel 1 exit 1
 
 :: install
-make install
+ninja install
 if errorlevel 1 exit 1
