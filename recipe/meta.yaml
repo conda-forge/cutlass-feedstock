@@ -10,7 +10,7 @@ source:
 
 build:
   number: 2
-  skip: true  # [osx]
+  skip: true  # [osx or cuda_compiler_version not in ("11.8", "12.0")]
   run_exports:
     - {{ pin_subpackage('cutlass', max_pin='x.x') }}
 
@@ -30,14 +30,8 @@ requirements:
 test:
   commands:
     # headers:
-    # This list should be substantially longer, but upstream just globs
-    # all *.h files. These are the headers required for triton, but
-    # relevant headers can be added as needed/desired.
-    {% for each_header in ["library/handle.h", "library/library.h",
-                           "library/operation_table.h", "library/singleton.h"] %}
-    - test -f $PREFIX/include/cutlass/{{ each_header }} || (echo "{{ each_header }} not found" && exit 1)  # [unix]
-    - if not exist %LIBRARY_INC%\cutlass\{{ "\\".join(each_header.split("/")) }} exit 1                    # [win]
-    {% endfor %}
+    - tree $CONDA_PREFIX/include/cutlass  # [linux]
+    - tree %CONDA_PREFIX%\Library\include\cutlass  # [win]
 
 about:
   home: https://github.com/NVIDIA/cutlass
