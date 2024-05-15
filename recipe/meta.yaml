@@ -33,7 +33,9 @@ test:
   commands:
     # headers:
     - tree $CONDA_PREFIX/include/cutlass  # [linux]
+    - tree $CONDA_PREFIX/include/cute  # [linux]
     - tree %CONDA_PREFIX%\Library\include\cutlass  # [win]
+    - tree %CONDA_PREFIX%\Library\include\cute  # [win]
 
 about:
   home: https://github.com/NVIDIA/cutlass
