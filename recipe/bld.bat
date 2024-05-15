@@ -28,4 +28,4 @@ ninja install
 if errorlevel 1 exit 1
 
 :: remove unnecessary files
-deltree $PREFIX/test
+rmdir /s /q %LIBRARY_PREFIX%\test
