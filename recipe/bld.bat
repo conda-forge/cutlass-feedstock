@@ -26,3 +26,6 @@ if errorlevel 1 exit 1
 :: install
 ninja install
 if errorlevel 1 exit 1
+
+:: remove unnecessary files
+deltree $PREFIX/test
