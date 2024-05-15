@@ -32,3 +32,6 @@ make -j$CPU_COUNT
 
 # install
 make install
+
+# remove unnecessary files
+rm -rf $PREFIX/test
