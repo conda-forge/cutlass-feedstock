@@ -14,24 +14,22 @@ ln -s $BUILD_PREFIX/bin/x86_64-conda-linux-gnu-g++ $BUILD_PREFIX/bin/g++
 # no GPU in CI, so disable building the tests...
 cmake \
     ${CMAKE_ARGS} \
+    -GNinja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_LIBRARY_OUTPUT_DIRECTORY="lib" \
     -DCUTLASS_ENABLE_F16C=ON \
-    -DCUTLASS_ENABLE_CUDNN=ON \
-    -DCUTLASS_ENABLE_CUBLAS=ON \
+    -DCUTLASS_ENABLE_CUDNN=OFF \
+    -DCUTLASS_ENABLE_CUBLAS=OFF \
     -DCUTLASS_REVISION=${PKG_VERSION} \
     -DCUTLASS_ENABLE_TOOLS=ON \
-    -DCUTLASS_ENABLE_LIBRARY=ON \
+    -DCUTLASS_ENABLE_LIBRARY=OFF \
     -DCUTLASS_ENABLE_PROFILER=OFF \
     -DCUTLASS_ENABLE_TESTS=OFF \
     -DCUTLASS_ENABLE_EXAMPLES=OFF \
-    ..  
-
-# compile
-make -j$CPU_COUNT
+    -DCUTLASS_INSTALL_TESTS=OFF \
+    ..
 
 # install
-make install
+cmake --build . --target install --config Release
 
-# remove static library
-rm -f $PREFIX/lib/libcutlass.a
+# remove unnecessary files
+rm -rf $PREFIX/test
