@@ -26,10 +26,7 @@ cmake \
     -DCUTLASS_ENABLE_TESTS=OFF \
     -DCUTLASS_ENABLE_EXAMPLES=OFF \
     -DCUTLASS_INSTALL_TESTS=OFF \
-    ..  
-
-# compile
-make -j$CPU_COUNT
+    ..
 
 # install
 cmake --build . --target install --config Release
