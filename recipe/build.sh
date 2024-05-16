@@ -14,6 +14,7 @@ ln -s $BUILD_PREFIX/bin/x86_64-conda-linux-gnu-g++ $BUILD_PREFIX/bin/g++
 # no GPU in CI, so disable building the tests...
 cmake \
     ${CMAKE_ARGS} \
+    -GNinja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCUTLASS_ENABLE_F16C=ON \
     -DCUTLASS_ENABLE_CUDNN=OFF \
@@ -31,7 +32,7 @@ cmake \
 make -j$CPU_COUNT
 
 # install
-make install
+cmake --build . --target install --config Release
 
 # remove unnecessary files
 rm -rf $PREFIX/test

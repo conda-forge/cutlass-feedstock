@@ -24,7 +24,7 @@ cmake ^
 if errorlevel 1 exit 1
 
 :: install
-ninja install
+cmake --build . --target install --config Release
 if errorlevel 1 exit 1
 
 :: remove unnecessary files

@@ -9,24 +9,24 @@ source:
   sha256: 821aa2e5b709a2e5d3922dcf2c5d445b4898a6ef8bac683cfb00125eafbca029
 
 build:
-  number: 2
+  number: 1
   skip: true  # [osx or cuda_compiler_version not in ("12.0",)]
-  run_exports:
-    - {{ pin_subpackage('cutlass', max_pin='x.x') }}
   ignore_run_exports_from:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
     - cmake
-    - make
-    - ninja  # [win64]
+    - ninja
   run_constrained:
     - cuda-version >=11.0.*,<13.a0
+
 test:
   requires:
     - tree  # [linux]
