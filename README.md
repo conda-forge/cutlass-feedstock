@@ -186,6 +186,7 @@ Feedstock Maintainers
 =====================
 
 * [@RaulPPelaez](https://github.com/RaulPPelaez/)
+* [@conda-forge/cuda](https://github.com/orgs/conda-forge/teams/cuda/)
 * [@h-vetinari](https://github.com/h-vetinari/)
 * [@leofang](https://github.com/leofang/)
 
