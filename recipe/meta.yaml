@@ -1,4 +1,4 @@
-{% set version = "3.3.0" %}
+{% set version = "3.5.1" %}
 
 package:
   name: cutlass
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cutlass/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 99876de94a04d0b9cdee81d4f29659bde1426b416926aef4d9a3a3a7869511a3
+  sha256: 20b7247cda2d257cbf8ba59ba3ca40a9211c4da61a9c9913e32b33a2c5883a36
 
 build:
   number: 0
