@@ -24,8 +24,6 @@ requirements:
     - {{ compiler('cuda') }}
     - cmake
     - ninja
-  run_constrained:
-    - cuda-version >=11.0.*,<13.a0
 
 test:
   requires:
