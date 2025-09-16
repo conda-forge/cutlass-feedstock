@@ -1,4 +1,4 @@
-{% set version = "4.1.0" %}
+{% set version = "4.2.0" %}
 
 package:
   name: cutlass
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cutlass/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8d4675b11e9e5207e3940eaac0f46db934ada371cbb3627c9fda642d912b6230
+  sha256: c9e965fdc8eddedb0fea0cf551ca6fd15dc7548d3cee6ce74e70cb393516ec15
 
 build:
-  number: 2
+  number: 0
   skip: true  # [osx or cuda_compiler_version == "None"]
   ignore_run_exports_from:
     - {{ compiler('c') }}
